@@ -3,7 +3,9 @@ const sql = require("mssql");
 const app = express();
 app.use(express.json());
 const cors = require("cors");
-app.use(cors());
+app.use(cors({
+  origin: '*',  // หรือระบุ URL ที่ต้องการอนุญาต
+}));
 require("dotenv").config();
 
 const config = {
